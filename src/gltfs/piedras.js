@@ -36,6 +36,8 @@ const pbrMaterial = new MeshStandardMaterial ({
    envMapIntensity:0.6,
    aoMapIntensity:1,
    roughness:0.5,
+   castShadow:true,
+   receiveShadow:true,
 });
 
 console.log(materials);
@@ -53,6 +55,8 @@ console.log(materials);
     normalMap={normalMap_oro}
     roughnessMap={roughnessMap_oro}
     metalness={1}
+    castShadow={true}
+    receiveShadow={true}
     />
 
     </Sphere>
