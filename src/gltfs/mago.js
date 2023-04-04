@@ -7,13 +7,13 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 
 export function Mago(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("./models/mago.gltf");
+  const { nodes, materials, animations } = useGLTF("../models/mago.gltf");
   const { actions } = useAnimations(animations, group);
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} position={[0,0.15,0]}>
       <group name="Scene">
-        <group name="Armature_druide" scale={1.91}>
+        <group name="Armature_druide" scale={1}>
           <primitive object={nodes.root} />
           <skinnedMesh
             name="druid"
@@ -27,4 +27,4 @@ export function Mago(props) {
   );
 }
 
-useGLTF.preload("./models/mago.gltf");
+useGLTF.preload("../models/mago.gltf");
